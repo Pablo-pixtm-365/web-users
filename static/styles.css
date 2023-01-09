@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    background-color: blueviolet;
+}
+
+div {
+    padding: 9px;
+    background-color: #f6f6f6;
+    overflow: hidden;
+}
+
+input[type="text"],
+textarea,
+input[type="password"],
+select {
+    font: 17px Calibri;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="datetime-local"] {
+    font: 17px Calibri;
+    width: 22%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="button"] {
+    font: 17px Calibri;
+    width: auto;
+    float: right;
+    cursor: pointer;
+    padding: 7px;
+}
+
+label[for="Fecha de ingreso"], 
+label[for="Fecha de entrenamiento"] {
+
+    font: 17px Calibri;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 4px;
+
+}

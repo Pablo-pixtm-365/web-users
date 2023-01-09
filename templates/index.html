@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\static\styles.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="login">
+        <h1>Login</h1>
+    </div>
+
+    <div>
+        <!--Add few elements to the form-->
+        <!--<h1>Save HTML Form data as text File using...</h1> -->
+        <div>
+          <input type="text" id="txtName" placeholder="ID_USUARIO" />
+        </div>
+
+        <div>
+          <input type="text" id="txtAge" placeholder="Nombre completo" />
+        </div>
+
+        <div>
+            <label for="Fecha de ingreso">Fecha de ingreso:</label><br>
+            <input type="datetime-local" id="txtIngreso" placeholder="Fecha de ingreso" />
+        </div>
+
+        <div>
+            <label for="Fecha de entrenamiento">Fecha de entrenamiento:</label><br>
+            <input type="datetime-local" id="txtEntrenamiento" placeholder="Fecha de entrenamiento">
+        </div>
+
+        <div>
+            <select>
+                <option selected value="">-- Departamento --</option>
+                <option value="Pulido">Pulido</option>
+                <option value="Engarce">Engarce</option>
+                <option value="Prepping">Prepping</option>
+                <option value="Joyeria">Joyeria</option>
+            </select>
+        </div>
+
+        <div>
+          <select id="idSex">
+            <option selected value="">-- Sexo --</option>
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+          </select>
+        </div>
+
+        <div>
+            <select>
+                <option selected value="">-- Nivel --</option>
+                <option value="Aprendice">Aprendice</option>
+                <option value="Journeman">Journeman</option>
+                <option value="Master">Master</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="text" id="txtPuntaje" placeholder="Puntaje">
+        </div>
+
+        <div>
+          <!--<textarea id="msg" name="msg" placeholder="Write some message ..." style="height: 100px;"></textarea> -->
+          <input type="password" id="password" name="password" placeholder="Password">
+        </div>
+
+        <div>
+          <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
+        </div>
+    </div>
+    
+</body>
+</html>
