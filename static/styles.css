@@ -40,7 +40,8 @@ input[type="button"] {
 }
 
 label[for="Fecha de ingreso"], 
-label[for="Fecha de entrenamiento"] {
+label[for="Fecha de entrenamiento"],
+label[for="upload"] {
 
     font: 17px Calibri;
     width: 100%;
