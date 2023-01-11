@@ -24,7 +24,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
 
-@app.route('/account', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def index():
     if request.method == "POST":
         if "username" in request.form and "password" in request.form:
