@@ -24,18 +24,18 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/account', methods=['GET', 'POST'])
 def index():
     if request.method == "POST":
         if "username" in request.form and "password" in request.form:
             username = request.form["username"]
             password = request.form["password"]
-            cursor = db.engine.execute("SELECT * FROM usuario WHERE usuario=? AND Contra=?", (username, password))
+            cursor = db.session.execute("SELECT * FROM usuario WHERE usuario=:val1 AND Contra=:val2", {'val1': username, 'val2':password})
             info = cursor.fetchone()
             
-
-            if info["usuario"] == username and info["Contra"] == password:
-                return "LOGIN SUCCESSFULL"
+            if info is not None:
+                if info["usuario"] == username and info["Contra"] == password:
+                    return "LOGIN SUCCESSFULL"
             else:
                 return "ERROR WITH THE LOGING"
 
