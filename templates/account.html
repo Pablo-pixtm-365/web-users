@@ -8,10 +8,22 @@
     <h2></h2>
     
    
-    
     <div id="id01" class="loging-box">
-
+        
         <img src="../static/images/img_avatar2-2.png" alt="Avatar" class="avatar">
+        {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+        <br />
+        {% for message in messages %}
+        <div class="alert alert-primary alert-dismissible" role="alert">
+            <strong>{{ message }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% endwith %}
 
         <h1>Login User</h1>
         <form class="modal-content animate" action="" method="post">

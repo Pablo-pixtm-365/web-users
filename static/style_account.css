@@ -69,3 +69,10 @@ button[type="submit"] {
 .modal-content.animate label{
     font: 20px Times normal;
 }
+
+
+.alert-primary strong {
+    
+    text-align: center;
+    color: red
+}
