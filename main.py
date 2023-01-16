@@ -1,3 +1,4 @@
+# Impport the neccesary libraries 
 from flask import Flask, render_template, redirect, session, url_for, request, session, flash,  Blueprint
 from sqlalchemy.engine import URL
 from sqlalchemy import create_engine, engine
@@ -8,6 +9,7 @@ from models.entities.user import User
 from models.modeluser import ModelUser
 
 #auth = Blueprint('auth', __name__)
+# Innit the aplication or server
 app = Flask(__name__)
 
 
@@ -49,19 +51,19 @@ def login():
         user = User(0, username, password2)
         logged_user = ModelUser.login(db, user)
         if logged_user != None:
-            if logged_user.password:
+            if logged_user.password == password2 and logged_user.username == username:
                 login_user(logged_user)
                 return redirect(url_for('form'))
             else:
-                flash("Invalid password...")
-                return render_template('accont.html')
+                flash("Contraseña incorrecta...")
+                return render_template('account.html')
 
         else:
-            flash("User not found...")
+            flash("Usuario no encontrado...")
             return render_template('account.html')
             #user  = str(info["usuario"])
-    else:
-        return render_template("account.html")
+    
+    return render_template("account.html")
 
 @app.route('/logout')
 def logout():

@@ -4,6 +4,7 @@
 
 body {
     background-color: blueviolet;
+    
 }
 
 div {
@@ -48,4 +49,13 @@ label[for="upload"] {
     font-weight: bold;
     border-radius: 4px;
 
+}
+
+
+h1 {
+    text-align: center;
+}
+
+form.main-form {
+    border-radius: 25px;
 }

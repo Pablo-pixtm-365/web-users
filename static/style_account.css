@@ -7,7 +7,7 @@ body {
 
 .loging-box {
     width: 350px;
-    height: 460;
+    height: 530;
     background: #000;
     color: #fff;
     top: 50%;
@@ -15,7 +15,8 @@ body {
     position:absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 70px 30px;
+    padding: 110px 40px;
+    border-radius: 25px;
 }
 
 .loging-box .avatar {
@@ -57,17 +58,32 @@ select {
     border-radius: 4px;
 }
 
-button[type="submit"] {
+div button[type="submit"] {
     font: 15px Calibri;
     width: 50%;
-    padding: 12px;
-    border: 1px solid #ccc;
+    padding: 12px 10px 10px;
+    border: 2px solid #ccc;
     border-radius: 4px;
     margin-bottom: 20px;
+    right: 120px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(50%, 20%);
+    border-radius: 20px;
+    
 }
 
 .modal-content.animate label{
     font: 20px Times normal;
+}
+
+
+.alert-primary {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-color: #fff;
+    border-radius: 20px;
 }
 
 
@@ -76,3 +92,34 @@ button[type="submit"] {
     text-align: center;
     color: red
 }
+
+body button {
+    padding: 50;
+}
+
+
+.close {
+    position: absolute;
+    right: 45px;
+    top: 137px;
+    width: 32px;
+    height: 25px;
+    opacity: 0.7;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 16px;
+    width: 4px;
+    background-color: red;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }

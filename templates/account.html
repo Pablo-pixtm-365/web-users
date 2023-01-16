@@ -4,29 +4,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    
-    <h2></h2>
+
     
    
     <div id="id01" class="loging-box">
         
-        <img src="../static/images/img_avatar2-2.png" alt="Avatar" class="avatar">
+        <img src="../static/images/Stuller_logo.png" alt="Avatar" class="avatar">
         {% with messages = get_flashed_messages() %}
 
         {% if messages %}
         <br />
         {% for message in messages %}
-        <div class="alert alert-primary alert-dismissible" role="alert">
+        <div class="alert alert-primary alert-dismissible" role="alert" id="closealert" onclick="toggle_visibility()">
             <strong>{{ message }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <span class="close"></span>
         </div>
         {% endfor %}
         {% endif %}
 
         {% endwith %}
-
-        <h1>Login User</h1>
-        <form class="modal-content animate" action="" method="post">
+        <br>
+        <h1>Login Here</h1>
+        <form class="modal-content animate" action="/login" method="post">
         
           <label for="uname"><b>Username</b></label>
           <input type="text" placeholder="Ingrese el numero del asociado" name="username">
@@ -39,8 +38,9 @@
           <script src="{{url_for('static', filename='../static/js/main.js')}}"></script>
         
           <br>
-          <button type="submit">Log In</button>
-    
+          <div>
+          <button type="submit">Login</button>
+          </div>
     
         
         </form>
