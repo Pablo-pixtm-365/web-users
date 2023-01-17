@@ -10,43 +10,51 @@
     
 </head>
 <body>
-    
-    <div class="login">
+
+    <div class="principal-header">
+      <div id="root">
+        <header>
+          <div class="ml-auto">
+            <a class="log-out session" name="log-out-session" value="exit" href="{{ url_for('logout') }}">Log Out</a>
+          </div>
+        </header>
+      </div>
+    </div>
+    <div class="title">
         <h1>Bienvenido, ingrese los datos del asociado</h1>
-        
     </div>  
     <form action="" method="POST" class="main-form">
         <!--Add few elements to the form-->
         <!--<h1>Save HTML Form data as text File using...</h1> -->
         
         <div>
-          <input type="text" id="txtName" placeholder="ID_USUARIO" />
+          <input type="text" id="txtName" placeholder="ID_USUARIO" name="id_user"/>
         </div>
 
         <div>
-          <input type="text" id="txtAge" placeholder="Nombre completo" />
+          <input type="text" id="txtAge" placeholder="Nombre completo" name="fullname"/>
         </div>
 
         <div>
-          <input type="text" id="txtTurno" placeholder="Turno" />
+          <input type="text" id="txtTurno" placeholder="Turno" name="turno"/>
         </div>
 
         <div>
             <label for="Fecha de ingreso">Fecha de ingreso:</label><br>
-            <input type="datetime-local" id="txtIngreso" placeholder="Fecha de ingreso" />
+            <input type="date" id="txtIngreso" placeholder="Fecha de ingreso" name="enter-date"/>
         </div>
 
         <div>
             <label for="Fecha de entrenamiento">Fecha de entrenamiento:</label><br>
-            <input type="datetime-local" id="txtEntrenamiento" placeholder="Fecha de entrenamiento">
+            <input type="date" id="txtEntrenamiento" placeholder="Fecha de entrenamiento" name="train-date"/>
         </div>
-        <div>
+        <!--<div>
           <label for="upload">Foto:</label><br>
           <input type="file" id="myFile" name="filename" placeholder="Subir foto">
-        </div>
+        </div> -->
         <div>
-            <select>
-                <option selected value="">-- Departamento --</option>
+            <select name="select1">
+                <option value="">-- Departamento --</option>
                 <option value="Pulido">Pulido</option>
                 <option value="Engarce">Engarce</option>
                 <option value="Prepping">Prepping</option>
@@ -55,16 +63,16 @@
         </div>
 
         <div>
-          <select id="idSex">
-            <option selected value="">-- Sexo --</option>
+          <select id="idSex" name="select2">
+            <option value="">-- Sexo --</option>
             <option value="Hombre">Hombre</option>
             <option value="Mujer">Mujer</option>
           </select>
         </div>
 
         <div>
-            <select>
-                <option selected value="">-- Nivel --</option>
+            <select name="select3">
+                <option value="">-- Nivel --</option>
                 <option value="Aprendice">Aprendice</option>
                 <option value="Journeman">Journeman</option>
                 <option value="Master">Master</option>
@@ -72,16 +80,17 @@
         </div>
 
         <div>
-            <input type="text" id="txtPuntaje" placeholder="Puntaje">
+            <input type="text" id="txtPuntaje" placeholder="Puntaje" name="score">
         </div>
 
-        <div>
-          <!--<textarea id="msg" name="msg" placeholder="Write some message ..." style="height: 100px;"></textarea> -->
-          <input type="password" id="password" name="password" placeholder="Password">
-        </div>
+        <!--<div>
+          <textarea id="msg" name="msg" placeholder="Write some message ..." style="height: 100px;"></textarea>
+          <input type="password" id="password" name="password" placeholder="Password"> 
+        </div> -->
 
         <div>
-          <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
+          <!--<input type="button" id="bt" value="Save data to file" onclick="saveFile()" />-->
+          <button id="bt" name="btn-send" type="submit" value="send-data">Submit</button>
         </div>
     </form>
     

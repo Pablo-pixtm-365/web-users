@@ -4,10 +4,15 @@
 
 body {
     background-color: blueviolet;
+    margin: 0;
+    padding: 0%;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 400;
     
 }
 
-div {
+form div, body .title {
     padding: 9px;
     background-color: #f6f6f6;
     overflow: hidden;
@@ -24,7 +29,7 @@ select {
     border-radius: 4px;
 }
 
-input[type="datetime-local"] {
+input[type="datetime-local"], input[type="date"] {
     font: 17px Calibri;
     width: 22%;
     padding: 12px;
@@ -32,7 +37,7 @@ input[type="datetime-local"] {
     border-radius: 4px;
 }
 
-input[type="button"] {
+button[type="submit"] {
     font: 17px Calibri;
     width: auto;
     float: right;
@@ -58,4 +63,27 @@ h1 {
 
 form.main-form {
     border-radius: 25px;
+}
+
+
+.principal-header a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+body .principal-header {
+    padding: 28px;
+    position: sticky;
+    background-color: black;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.principal-header a {
+    left: -70%;
+    color: white;
+    cursor: pointer;
+    text-underline-position: auto;
+    display: flex;
+    touch-action: manipulation;
 }

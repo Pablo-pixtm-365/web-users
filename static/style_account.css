@@ -6,8 +6,8 @@ body {
 }
 
 .loging-box {
-    width: 350px;
-    height: 530;
+    width: 380px;
+    height: 610;
     background: #000;
     color: #fff;
     top: 50%;
@@ -15,7 +15,7 @@ body {
     position:absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 110px 40px;
+    padding: 130px 50px;
     border-radius: 25px;
 }
 
@@ -100,8 +100,8 @@ body button {
 
 .close {
     position: absolute;
-    right: 45px;
-    top: 137px;
+    right: 52px;
+    top: 158px;
     width: 32px;
     height: 25px;
     opacity: 0.7;
