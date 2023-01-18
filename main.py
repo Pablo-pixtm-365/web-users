@@ -20,7 +20,6 @@ connection_string = ('Driver={SQL Server};'
                       'UID=YOUR USER;'
                       'PWD=YOUR PASSWORD')
 
-
 connection_url = URL.create("mssql+pyodbc", query={"odbc_connect": connection_string})
 app.config['SQLALCHEMY_DATABASE_URI'] = connection_url
 #engine = create_engine(connection_url)
@@ -29,7 +28,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config["SESSION_COOKIE_SECURE"] = True
 app.secret_key = "18ff50fc6850b557eb431c4904621292"
 
-csrf = CSRFProtect()
+csrf = CSRFProtect(app)
 db = SQLAlchemy(app)
 login_manager_app = LoginManager(app)
 #login_manager_app.init_app(app)
@@ -99,7 +98,7 @@ def form():
             if cursor:
                 return redirect(url_for('form'))
             else:
-                flash("Missing...")
+                flash("Hay informacion faltante...")
         
         #elif request.form[]
 

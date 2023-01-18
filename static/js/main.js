@@ -19,3 +19,22 @@ function toggle_visibility(id) {
   else
      e.style.display = 'block';
 }
+
+
+(function() {
+  $('form div button').keyup(function() {
+
+      var empty = false;
+      $('form div input').each(function() {
+          if ($(this).val() == '') {
+              empty = true;
+          }
+      });
+
+      if (empty) {
+          $('#bt-register').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+      } else {
+          $('#bt-register').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+      }
+  });
+})()

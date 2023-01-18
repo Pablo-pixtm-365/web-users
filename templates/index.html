@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\static\styles.css">
+    <link rel="shortcut icon" href="../static/images/logo.jfif">
     <title>Document</title>
     
 </head>
 <body>
 
     <div class="principal-header">
+      <img class="logo" src="../static/images/Stuller_logo.png" alt role="presentation">
       <div id="root">
         <header>
           <div class="ml-auto">
@@ -22,26 +24,39 @@
     </div>
     <div class="title">
         <h1>Bienvenido, ingrese los datos del asociado</h1>
+        {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+        <br />
+        {% for message in messages %}
+        <div class="alert alert-primary alert-dismissible" role="alert" id="closealert" onclick="toggle_visibility()">
+            <strong>{{ message }}</strong>
+            <span class="close"></span>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% endwith %}
     </div>  
     <form action="" method="POST" class="main-form">
         <!--Add few elements to the form-->
         <!--<h1>Save HTML Form data as text File using...</h1> -->
-        
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <div>
-          <input type="text" id="txtName" placeholder="ID_USUARIO" name="id_user"/>
+          <input type="text" id="txtName" placeholder="ID_USUARIO" name="id_user" required/>
         </div>
 
         <div>
-          <input type="text" id="txtAge" placeholder="Nombre completo" name="fullname"/>
+          <input type="text" id="txtAge" placeholder="Nombre completo" name="fullname" required/>
         </div>
 
         <div>
-          <input type="text" id="txtTurno" placeholder="Turno" name="turno"/>
+          <input type="text" id="txtTurno" placeholder="Turno" name="turno" required/>
         </div>
 
         <div>
             <label for="Fecha de ingreso">Fecha de ingreso:</label><br>
-            <input type="date" id="txtIngreso" placeholder="Fecha de ingreso" name="enter-date"/>
+            <input type="date" id="txtIngreso" placeholder="Fecha de ingreso" name="enter-date" required/>
         </div>
 
         <div>
@@ -53,7 +68,7 @@
           <input type="file" id="myFile" name="filename" placeholder="Subir foto">
         </div> -->
         <div>
-            <select name="select1">
+            <select name="select1" required>
                 <option value="">-- Departamento --</option>
                 <option value="Pulido">Pulido</option>
                 <option value="Engarce">Engarce</option>
@@ -63,7 +78,7 @@
         </div>
 
         <div>
-          <select id="idSex" name="select2">
+          <select id="idSex" name="select2" required>
             <option value="">-- Sexo --</option>
             <option value="Hombre">Hombre</option>
             <option value="Mujer">Mujer</option>
@@ -71,7 +86,7 @@
         </div>
 
         <div>
-            <select name="select3">
+            <select name="select3" required>
                 <option value="">-- Nivel --</option>
                 <option value="Aprendice">Aprendice</option>
                 <option value="Journeman">Journeman</option>
@@ -80,7 +95,7 @@
         </div>
 
         <div>
-            <input type="text" id="txtPuntaje" placeholder="Puntaje" name="score">
+            <input type="text" id="txtPuntaje" placeholder="Puntaje" name="score" required>
         </div>
 
         <!--<div>
@@ -90,7 +105,10 @@
 
         <div>
           <!--<input type="button" id="bt" value="Save data to file" onclick="saveFile()" />-->
-          <button id="bt" name="btn-send" type="submit" value="send-data">Submit</button>
+          
+          <button name="btn-send" type="submit" id="bt-register" value="send-data">Submit</button>
+          
+          
         </div>
     </form>
     

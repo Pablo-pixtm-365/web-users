@@ -3,7 +3,7 @@
   }
 
 body {
-    background-color: blueviolet;
+    background-color: #f6f6f6;
     margin: 0;
     padding: 0%;
     font-size: 1em;
@@ -72,18 +72,77 @@ form.main-form {
 }
 
 body .principal-header {
-    padding: 28px;
-    position: sticky;
+    padding: 10px 10px;
+    
     background-color: black;
     overflow: hidden;
-    z-index: 1000;
+    
+    line-height: 20px;
 }
 
 .principal-header a {
-    left: -70%;
+
     color: white;
     cursor: pointer;
-    text-underline-position: auto;
     display: flex;
     touch-action: manipulation;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 17px;
+    font-size: 16px;
+    
 }
+
+
+.ml-auto {
+
+    float: right;
+}
+
+
+img.logo {
+
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    width: 60px;
+    height: 60px;
+    float: left;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+
+.alert-primary strong {
+    
+    text-align: center;
+    color: red
+}
+
+
+.close {
+    position: absolute;
+    right: 52px;
+    top: 158px;
+    width: 32px;
+    height: 25px;
+    opacity: 0.7;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 16px;
+    width: 4px;
+    background-color: red;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
